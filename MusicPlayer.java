@@ -28,18 +28,20 @@ public class MusicPlayer {
 	}
 	
 	public void setMusic(File file){
-		soundClip.stop();
-		soundClip.close();
-		currentFrame=0;
-		AudioInputStream audioInputStream;
-		try {
-			audioInputStream = AudioSystem.getAudioInputStream(file);
-			soundClip = AudioSystem.getClip();
-			soundClip.open(audioInputStream);
-		} catch (UnsupportedAudioFileException | IOException e) {
-			e.printStackTrace();
-		} catch (LineUnavailableException e) {
-			e.printStackTrace();
+		if(file!=null){
+			soundClip.stop();
+			soundClip.close();
+			currentFrame=0;
+			AudioInputStream audioInputStream;
+			try {
+				audioInputStream = AudioSystem.getAudioInputStream(file);
+				soundClip = AudioSystem.getClip();
+				soundClip.open(audioInputStream);
+			} catch (UnsupportedAudioFileException | IOException e) {
+				e.printStackTrace();
+			} catch (LineUnavailableException e) {
+				e.printStackTrace();
+			}
 		}
 	}
 
