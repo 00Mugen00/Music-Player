@@ -48,7 +48,6 @@ public class MusicPlayer {
 	public void play() {
 		soundClip.setFramePosition(currentFrame);
 		soundClip.start();
-		soundClip.loop(Clip.LOOP_CONTINUOUSLY);
 	}
 	
 	public void pause(){
