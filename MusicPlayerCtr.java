@@ -2,6 +2,7 @@ package prMusicPlayer;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 
 public class MusicPlayerCtr implements ActionListener{
 	private MusicPlayerView musicPlayerView;
@@ -25,6 +26,10 @@ public class MusicPlayerCtr implements ActionListener{
 			musicPlayer.stop();
 			musicPlayerView.showMessage("Music stopped");
 			break;
+		case "OPEN":
+			File file = musicPlayerView.selectMusic();
+			musicPlayer.setMusic(file);
+			musicPlayerView.showMessage("Music is playing");
 		}
 	}
 
